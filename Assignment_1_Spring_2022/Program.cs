@@ -89,7 +89,38 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
-                // write your code here
+                // Establish arrays for lowercase letter, uppercase letters, lowercase vowel, and uppercase vowels
+                char[] LCletter = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+                char[] UCletter = { 'A', 'B', 'c', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z' };
+                char[] LCvowels = { 'a', 'e', 'i', 'o', 'u' };
+                char[] UCvowels = { 'A', 'E', 'I', 'O', 'U' };
+
+                for (int i = 0; i < s.Length; i++)  // For loop is used to cycle through each letter in the string
+                {
+                    if (s.Length < 0 || s.Length > 10000)   // Constraint for the number of letters in the string
+                    {
+                        Console.WriteLine("String must be between 0 and 10000 letters");
+                    }
+                    else
+                    {
+                        if (!(s.Contains(LCletter) && s.Contains(UCletter)))    // Constraint to ensure the string contains both lowercase and uppercase letters
+                        {
+                            Console.WriteLine("String must contain uppercase and lowercase letters");
+                        }
+                        else
+                        {
+                            if (s.Contains(LCvowels) || s.Contains(UCvowels))   // Tests to see if the string has lowercase or uppercase vowels
+                            {
+                                s.Replace(s[i].ToString(), ""); // Removes any lowercase or uppercase vowels in the string
+                            }
+                            else
+                            {
+                                Console.WriteLine(s);   // Returns the original string if there are no vowels
+                            }
+                        }
+
+                    }
+                }
                 String final_string ="";
                 return final_string;
             }
@@ -125,7 +156,13 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
-                // write your code here.
+                string joinbulls1 = string.Join(", ", bulls_string1);   // Join strings of bulls_string1
+                string joinbulls2 = string.Join(", ", bulls_string2);   // Join strings of bulls_string2
+
+                if (joinbulls1 == joinbulls2)   // Testing to see if the joined strings of each array are the same
+                {
+                    return true;
+                }
                 return false;
             }
             catch (Exception)
@@ -158,7 +195,29 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
-                // write your code here
+                int sumunique = 0;
+
+                if (bull_bucks.Length < 1 || bull_bucks.Length > 100)   // Constraint for the number of letters in the string
+                {
+                    Console.WriteLine("Number of elements in the array must be between 1 and 100");
+                }
+                else
+                {
+                    for (int i = 1; i <= bull_bucks.Length; i++)
+                    {
+                        int[] uniquebull_bucks = bull_bucks.Distinct().ToArray();
+                        if (bull_bucks[i] < 1 || bull_bucks[i] > 100)   // Constraint for the number of letters in the string
+                        {
+                            Console.WriteLine("Each element in the array must be between 1 and 100");
+                        }
+                        else
+                        {
+                            uniquebull_bucks[i - 1] = Convert.ToInt32(bull_bucks);
+                        }     // Will check if there are duplicates and place inside array
+                        sumunique = uniquebull_bucks.Sum();
+                    }
+                }
+            
                 return 0;
 
             }
@@ -192,7 +251,7 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
-                // write your code here.
+                // Could not complete.
 
                 return 0;
             }
@@ -224,7 +283,7 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
-                // write your code here.
+                // Could not complete.
                 return "null";
             }
             catch (Exception e)
@@ -264,6 +323,7 @@ namespace DIS_Assignmnet1_SPRING_2022
         {
             try
             {
+                // Could not complete.
                 String prefix_string ="";
                 return prefix_string;
             }
